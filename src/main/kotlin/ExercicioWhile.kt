@@ -33,10 +33,34 @@ fun inverte() {
             i--
         }
     }
+    println()
 }
+
+fun xoxo(str: String): Boolean {
+    var i = 0
+    var contx = 0
+    var conto = 0
+    while (i < str.length) {
+        if (str[i] == 'x') {
+            contx++
+        } else if (str[i] == 'o') {
+            conto++
+        }
+        i++
+    }
+    if (contx == conto && contx+conto > 0) {
+        return true
+    } else if (contx + conto == 0) {
+        return false
+    } else return false
+}
+
 
 fun main() {
     caixa()
     fizzbuzz()
     inverte()
+    print("Entre com a string: ")
+    val str = readln()
+    print(xoxo(str.lowercase()))
 }
