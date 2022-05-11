@@ -50,6 +50,7 @@ fun exc1() {
 
 fun exc2() {
     for (i in 50 downTo 1) {
+        //asdasd
         print("$i ")
     }
 }
@@ -63,8 +64,7 @@ fun exc4() {
 }
 
 fun exc5() {
-   // print("Entre com um número: ")
-    print ("entre com novo numero")
+    print("Entre com um número: ")
     val n = readln()
     var str = "#"
     if (n != null && n != "") {
