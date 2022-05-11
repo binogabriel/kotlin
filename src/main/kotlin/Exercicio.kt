@@ -63,7 +63,8 @@ fun exc4() {
 }
 
 fun exc5() {
-    print("Entre com um número: ")
+   // print("Entre com um número: ")
+    print ("entre com novo numero")
     val n = readln()
     var str = "#"
     if (n != null && n != "") {
