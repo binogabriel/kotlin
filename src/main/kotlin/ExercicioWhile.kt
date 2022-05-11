@@ -5,6 +5,7 @@ fun caixa(){
         i+=7
         balao++
     }
+    print(balao)
 }
 
 
