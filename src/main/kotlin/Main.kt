@@ -18,6 +18,17 @@ class Pessoa(val anoNascimento: Int, var nome: String){
     }
 }
 
+class Animal (var especie: String){
+    var fala = ""
+    init {
+        if(especie == "cachorro") {
+            fala = "não"
+        } else {
+            fala = "sim"
+        }
+    }
+
+}
 
 fun main() {
     // class - comportamentos e atributos
@@ -34,4 +45,8 @@ fun main() {
     mulher.acordar()
     mulher.olhos = "preto"
     println(mulher.olhos)
+
+
+    println(Animal("cachorro").fala)
+
 }
