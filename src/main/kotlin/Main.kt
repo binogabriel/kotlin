@@ -42,13 +42,20 @@ class Animal(var especie: String) {
 }
 
 
-enum class Prioridade {
-    Baixa, Media, Alta
+enum class Prioridade(val value: Int) {
+    Baixa(1){
+        override fun toString(): String {
+            return "Prioridade Baixa $value"
+        }
+            },
+    Media(5),
+    Alta(10)
 }
 
 enum class Animalenum {
     Cachorro, Gato, Cavalo, Vaca
 }
+
 
 fun main() {
     // class - comportamentos e atributos
@@ -66,9 +73,11 @@ fun main() {
     mulher.olhos = "preto"
     println(mulher.olhos)
 */
-
+/*
     val a = Animal("cachorro")         //só entra no get (se tiver ser o fala)
     a.fala = "auuuu"                        //só entra no set
-
-
+*/
+    for (p in Prioridade.values()){
+        println(p)
+        }
 }
