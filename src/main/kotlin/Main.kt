@@ -1,3 +1,5 @@
+import java.text.Normalizer.Form
+
 class Pessoa(val anoNascimento: Int, var nome: String) {
 
     var olho: String = ""
@@ -43,11 +45,11 @@ class Animal(var especie: String) {
 
 
 enum class Prioridade(val value: Int) {
-    Baixa(1){
+    Baixa(1) {
         override fun toString(): String {
             return "Prioridade Baixa $value"
         }
-            },
+    },
     Media(5),
     Alta(10)
 }
@@ -56,6 +58,18 @@ enum class Animalenum {
     Cachorro, Gato, Cavalo, Vaca
 }
 
+class Forma(val a: Int, val b: Int) {
+    override fun equals(other: Any?): Boolean {
+        return if (other is Forma) {
+            (other.a == this.a && other.b == this.b)
+
+        } else {
+            false
+        }
+    }
+}
+
+data class DataForma(val a: Int, val b: Int)
 
 fun main() {
     // class - comportamentos e atributos
@@ -77,7 +91,18 @@ fun main() {
     val a = Animal("cachorro")         //só entra no get (se tiver ser o fala)
     a.fala = "auuuu"                        //só entra no set
 */
+/*
     for (p in Prioridade.values()){
         println(p)
         }
+*/
+    val f1: DataForma = DataForma(10, 8)
+    //f1.equals()
+    println(f1.toString())
+    println(f1.hashCode())
+    val f2: DataForma = DataForma(10, 8)
+    println(f1.equals(f2))                  //quando se vai usar essas 3 funções, usar data class para comparar os dados
+    println(f2.toString())                  //
+    println(f2.hashCode())                  //
+
 }
