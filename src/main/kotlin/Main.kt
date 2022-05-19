@@ -71,7 +71,21 @@ class Forma(val a: Int, val b: Int) {
 
 data class DataForma(val a: Int, val b: Int)
 
+open class Eletronico(var marca:String){        // precisa ser open para que possam herdar dela
+    private fun ativarCorrente(){}
+    fun liga(){
+        ativarCorrente()
+    }
+    fun desliga(){}
+}
+
+class Computador(marca:String): Eletronico(marca){
+    fun instalar(){}
+    fun processar(){}
+}
+
 fun main() {
+//-----------------------------------------------Encapsulamento----------------------------------------------------
     // class - comportamentos e atributos
 /*
     // classe (instancia) objetos
@@ -96,6 +110,7 @@ fun main() {
         println(p)
         }
 */
+/*
     val f1: DataForma = DataForma(10, 8)
     //f1.equals()
     println(f1.toString())
@@ -104,5 +119,20 @@ fun main() {
     println(f1.equals(f2))                  //quando se vai usar essas 3 funções, usar data class para comparar os dados
     println(f2.toString())                  //
     println(f2.hashCode())                  //
+*/
+//---------------------------------------Herança--------------------------------------------------------
+
+    var c:Computador = Computador("Dell")
+    c.liga()
+    c.desliga()
+    c.instalar()
+    c.processar()
+    c.marca
+
+    var e:Eletronico = Eletronico("Asus")
+    e.liga()
+    e.desliga()
+    e.marca
+
 
 }
