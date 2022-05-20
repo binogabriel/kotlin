@@ -72,16 +72,25 @@ class Forma(val a: Int, val b: Int) {
 data class DataForma(val a: Int, val b: Int)
 
 open class Eletronico(var marca:String){        // precisa ser open para que possam herdar dela
-    private fun ativarCorrente(){}
+    private fun corrente(ativo: Boolean){}
     fun liga(){
-        ativarCorrente()
+        corrente(true)
     }
-    fun desliga(){}
+    open fun desliga(){
+        corrente(false)
+    }
 }
 
 class Computador(marca:String): Eletronico(marca){
-    fun instalar(){}
-    fun processar(){}
+    fun save(){}
+    override fun desliga(){
+        save()
+        super.desliga()                     //super é para usar a função da outra classe
+    }
+
+    fun save(a:Int){
+
+    }
 }
 
 fun main() {
@@ -125,8 +134,6 @@ fun main() {
     var c:Computador = Computador("Dell")
     c.liga()
     c.desliga()
-    c.instalar()
-    c.processar()
     c.marca
 
     var e:Eletronico = Eletronico("Asus")
