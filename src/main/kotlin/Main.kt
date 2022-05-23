@@ -45,4 +45,6 @@ fun main() {
     map2.remove("França")
     map2.contains("Brasil")
     map2.clear()
+
+    println(map1["Brasil"])
 }
