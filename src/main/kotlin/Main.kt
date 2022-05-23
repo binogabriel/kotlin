@@ -1,145 +1,16 @@
-import java.text.Normalizer.Form
-
-class Pessoa(val anoNascimento: Int, var nome: String) {
-
-    var olho: String = ""
-
-    var documento = ""
-    var doc: String? = null
-    var olhos: String? = null
-
-    constructor(anoNascimento: Int, nome: String, doc: String, olhos: String) : this(anoNascimento, nome) {
-        this.doc = doc
-        this.olhos = olhos
-    }
-
-    fun dormir() {
-
-    }
-
-    fun acordar() {
-
-    }
-}
-
-class Animal(var especie: String) {
-    var fala = ""
-        get() {
-            println("get")
-            return field
-        }
-        set(value) {
-            println("set")
-            field = value
-        }
-/*
-    init {
-        if (especie == "cachorro") {
-            fala = "não"
-        } else {
-            fala = "sim"
-        }
-    }
-*/
-}
-
-
-enum class Prioridade(val value: Int) {
-    Baixa(1) {
-        override fun toString(): String {
-            return "Prioridade Baixa $value"
-        }
-    },
-    Media(5),
-    Alta(10)
-}
-
-enum class Animalenum {
-    Cachorro, Gato, Cavalo, Vaca
-}
-
-class Forma(val a: Int, val b: Int) {
-    override fun equals(other: Any?): Boolean {
-        return if (other is Forma) {
-            (other.a == this.a && other.b == this.b)
-
-        } else {
-            false
-        }
-    }
-}
-
-data class DataForma(val a: Int, val b: Int)
-
-open class Eletronico(var marca:String){        // precisa ser open para que possam herdar dela
-    private fun corrente(ativo: Boolean){}
-    fun liga(){
-        corrente(true)
-    }
-    open fun desliga(){
-        corrente(false)
-    }
-}
-
-class Computador(marca:String): Eletronico(marca){
-    fun save(){}
-    override fun desliga(){
-        save()
-        super.desliga()                     //super é para usar a função da outra classe
-    }
-
-    fun save(a:Int){
-
-    }
-}
-
 fun main() {
-//-----------------------------------------------Encapsulamento----------------------------------------------------
-    // class - comportamentos e atributos
-/*
-    // classe (instancia) objetos
-    var mulher: Pessoa = Pessoa(2020, "asd", "10804861609", "pretos") // usa o construtor secundário
-    var homem: Pessoa = Pessoa(2000, "fulano") // usa o construtor primário
 
-    // this = se refere ao objeto
+    //List
+    val lst1: List<Int> = listOf(1, 2, 3, 4, 5)
+    val lst2: MutableList<Int> = mutableListOf(1, 2, 3, 4, 5)
 
-    mulher.anoNascimento
-    mulher.nome
-    mulher.dormir()
-    mulher.acordar()
-    mulher.olhos = "preto"
-    println(mulher.olhos)
-*/
-/*
-    val a = Animal("cachorro")         //só entra no get (se tiver ser o fala)
-    a.fala = "auuuu"                        //só entra no set
-*/
-/*
-    for (p in Prioridade.values()){
-        println(p)
-        }
-*/
-/*
-    val f1: DataForma = DataForma(10, 8)
-    //f1.equals()
-    println(f1.toString())
-    println(f1.hashCode())
-    val f2: DataForma = DataForma(10, 8)
-    println(f1.equals(f2))                  //quando se vai usar essas 3 funções, usar data class para comparar os dados
-    println(f2.toString())                  //
-    println(f2.hashCode())                  //
-*/
-//---------------------------------------Herança--------------------------------------------------------
+    println(lst2[0])
+    lst2.add(10)
+    println(lst2.size)
 
-    var c:Computador = Computador("Dell")
-    c.liga()
-    c.desliga()
-    c.marca
-
-    var e:Eletronico = Eletronico("Asus")
-    e.liga()
-    e.desliga()
-    e.marca
-
-
+    lst2.add(0)                     //add o argumento no fim
+    lst2.removeAt(0)            //remove na posição
+    println(lst2.contains(2))           //vê se contem o argumento na list
+    lst2.clear()                    //limpa a list
+    println(lst2)
 }
