@@ -1,9 +1,9 @@
-fun main() {
-    //Console, Portaria, Pessoa, Convite
-    Portaria().controle()
-}
+package control
 
-// Função portaria usada para consulta
+fun main() {
+    //control.Console, control.Portaria, entity.Pessoa, entity.Convite
+    Portaria()
+}
 
 fun portaria() {
     /*print("Qual sua idade? ")
@@ -20,7 +20,7 @@ fun portaria() {
         tipoConvite = tipoConvite.lowercase()
         // Validação do tipo de convite
         if (tipoConvite != "comum" && tipoConvite != "premium" && tipoConvite != "luxo") {
-            println("Negado. Convite inválido.")
+            println("Negado. entity.Convite inválido.")
             return
         }
         print("Qual o código do convite? ")
@@ -33,7 +33,7 @@ fun portaria() {
             ) {
                 println("Welcome :)")
             } else {
-                println("Negado. Convite inválido")
+                println("Negado. entity.Convite inválido")
             }
         }
     }
